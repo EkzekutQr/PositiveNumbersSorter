@@ -2,8 +2,18 @@
 using System;
 using System.Linq;
 
-// Пример массива целых чисел
-int[] numbers = { -5, 10, -3, 8, -1, 15, 0, 7, -2, 12 };
+
+// Создаем массив из 15 элементов и заполняем его случайными числами от 0 до 99
+int[] numbers = new int[15];
+Random random = new Random();
+for (int i = 0; i < numbers.Length; i++)
+{
+    numbers[i] = random.Next(-100, 100); // Случайное число от 0 до 99
+}
+
+// Выводим массив в консоль
+Console.WriteLine("Сгенерированный массив очков:");
+Console.WriteLine(string.Join(", ", numbers));
 
 // Фильтруем положительные элементы
 var positiveNumbers = numbers.Where(n => n > 0).ToArray();
@@ -12,5 +22,5 @@ var positiveNumbers = numbers.Where(n => n > 0).ToArray();
 Console.WriteLine("Положительные элементы в обратном порядке:");
 for (int i = positiveNumbers.Length - 1; i >= 0; i--)
 {
-    Console.WriteLine(positiveNumbers[i]);
+    Console.Write(positiveNumbers[i] + ", ");
 }
