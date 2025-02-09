@@ -3,12 +3,12 @@ using System;
 using System.Linq;
 
 
-// Создаем массив из 15 элементов и заполняем его случайными числами от 0 до 99
+// Создаем массив из 15 элементов и заполняем его случайными числами от -100 до 99
 int[] numbers = new int[15];
 Random random = new Random();
 for (int i = 0; i < numbers.Length; i++)
 {
-    numbers[i] = random.Next(-100, 100); // Случайное число от 0 до 99
+    numbers[i] = random.Next(-100, 100); // Случайное число от -100 до 99
 }
 
 // Выводим массив в консоль
